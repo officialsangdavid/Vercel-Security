@@ -22,7 +22,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: ci install -y
+        run: npm ci
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
