@@ -10,7 +10,6 @@
     "@svitejs/changesets-changelog-github-compact": "1.1.0",
     "@types/node": "20.11.0",
     "@vercel/build-utils": "*",
-    "@vercel/style-guide": "4.0.2",
     "async-retry": "1.2.3",
     "buffer-replace": "1.0.0",
     "create-svelte": "2.0.1",
