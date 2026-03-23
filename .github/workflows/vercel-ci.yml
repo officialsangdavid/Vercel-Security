@@ -1,5 +1,5 @@
 
-name: Snyk Security
+name: CI Security Pipeline
 
 on:
   push:
@@ -15,9 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: ci install -y
+
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
+        with:
+           command: test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: snyk test --all-projects
